@@ -9,7 +9,9 @@
     "// 2) Apply all pending migrations to DB": "",
     "db:migrate:run": "prisma migrate dev",
     "db:generate": "bunx prisma generate",
-    "dev": "bun --watch src/index.ts"
+    "dev": "bun --watch src/index.ts",
+    "build": "bun build src/index.ts --outdir dist --target=node",
+    "start": "bun dist/index.js"
   },
   "devDependencies": {
     "@types/bun": "latest",
