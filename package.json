@@ -1,0 +1,29 @@
+{
+  "name": "bun-docker-prisma-test",
+  "module": "src/index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "// 1) Create a migration with name (does NOT run it)": "",
+    "db:migrate:create": "bunx prisma migrate dev --create-only --name",
+    "// 2) Apply all pending migrations to DB": "",
+    "db:migrate:run": "prisma migrate dev",
+    "db:generate": "bunx prisma generate",
+    "dev": "bun --watch src/index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/express": "^5.0.5",
+    "@types/jsonwebtoken": "^9.0.10",
+    "prisma": "^6.18.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.18.0",
+    "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
