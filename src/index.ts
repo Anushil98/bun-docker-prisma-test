@@ -1,16 +1,13 @@
-import express, { type Request, type Response } from "express";
+import express from "express";
 import { prisma } from "./lib/prisma";
 import authRouter from "./routes/auth.routes";
+import postRouter from "./routes/post.routes";
 
 const app = express();
 
 app.use(express.json());
-
-app.get("/", (req: Request, res: Response) => {
-  res.json({ ok: true });
-});
-
 app.use("/api/auth", authRouter);
+app.use("/api/post", postRouter);
 
 async function start() {
   try {
