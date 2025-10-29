@@ -11,7 +11,8 @@
     "db:generate": "bunx prisma generate",
     "dev": "bun --watch src/index.ts",
     "build": "bun build src/index.ts --outdir dist --target=node",
-    "start": "bun dist/index.js"
+    "start": "bun dist/index.js",
+    "test": "bun test"
   },
   "devDependencies": {
     "@types/bun": "latest",

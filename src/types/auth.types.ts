@@ -4,8 +4,8 @@ export interface UserOutput
   extends Omit<User, "email" | "password" | "phone"> {}
 
 export interface TOKEN_PAYLOAD {
-  accessToken: String;
-  refreshToken: String;
+  accessToken: string;
+  refreshToken: string;
 }
 export interface AUTH_PAYLOAD {
   tokenSet: TOKEN_PAYLOAD;

@@ -1,5 +1,6 @@
 import express from "express";
-import { prisma } from "./lib/prisma";
+import "./app/di";
+import { prisma } from "./app/di";
 import authRouter from "./routes/auth.routes";
 import postRouter from "./routes/post.routes";
 
@@ -21,13 +22,14 @@ async function start() {
       console.log("🚀 Server running at http://localhost:" + PORT);
     });
   } catch (err) {
-    console.error("❌ Failed to connect DB:", err);
+    console.error("❌ Failed to connect DB:", (err as Error).message);
     process.exit(1);
   }
 }
 
 process.on("SIGINT", async () => {
   await prisma.$disconnect();
+  console.log("❌ DB disconnected");
   process.exit(0);
 });
 
